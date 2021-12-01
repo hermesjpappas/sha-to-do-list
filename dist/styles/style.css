@@ -7,6 +7,7 @@
 :root {
     --header-height: 6rem;
     --br: 1rem;
+    --to-do-color: 252, 252, 130;
 }
 
 body {
@@ -38,7 +39,7 @@ main {
     display: flex;
     align-items: flex-start;
     flex-wrap: wrap;
-    background-color: rgb(235, 235, 235);
+    background-color: 235, 235, 235;
     padding: 1rem;
     width: 100vw;
     gap: 2rem;
@@ -66,7 +67,7 @@ main {
     position: relative;
     width: 25rem;
     /* height: 10rem; */
-    background-color: rgb(252, 252, 130);
+    background-color: rgb(var(--to-do-color));
     display: flex;
     flex-direction: column;
     padding: 1rem;
