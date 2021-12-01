@@ -4,13 +4,12 @@ import { toDo } from './toDo';
 
 
 function render(projectList) {
-
+   
    const dash = document.getElementById("dashboard");
+   dash.innerHTML = "";
 
     for(let i=0; i<projectList.length; i++) {
         let proj = projectList[i];
-        console.log(proj);
-        console.log("I am the project list", proj.list);
 
         let projDiv = document.createElement("div");
         projDiv.classList.add("project");

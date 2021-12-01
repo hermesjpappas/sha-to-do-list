@@ -1,7 +1,7 @@
 import { toDo } from './toDo';
 import { project } from './project';
 import { render } from './render';
-import { buttonListeners } from './formAdd';
+import { buttonListeners } from './listeners';
 
 
 //until we make it work with localStorage
@@ -33,3 +33,6 @@ projectArray.push(importantProject);
 render(projectArray);
 
 buttonListeners();
+
+
+export { projectArray };
