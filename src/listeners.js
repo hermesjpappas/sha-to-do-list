@@ -15,6 +15,7 @@ function buttonListeners() {
     });
 
     cancelButton.addEventListener("click", (e) => {
+        e.preventDefault();
         popUp.style.display = "none";
     });
 
