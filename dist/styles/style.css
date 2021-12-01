@@ -27,8 +27,7 @@ main {
 
 #dashboard {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
     background-color: beige;
     padding: 1rem;
     width: 100vw;
