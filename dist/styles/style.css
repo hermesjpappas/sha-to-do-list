@@ -5,13 +5,17 @@
 }
 
 :root {
-    --header-height: 5rem;
+    --header-height: 6rem;
+    --br: 1rem;
 }
 
 body {
     display: flex;
     flex-direction: column;
     font-size: 16px;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 300;
+    background-color: rgb(235, 235, 235);
 }
 
 header {
@@ -19,6 +23,11 @@ header {
     justify-content: center;
     align-items: center;
     height: var(--header-height);
+}
+
+header h1 {
+    font-size: 3rem;
+    font-weight: 700;
 }
 
 main {
@@ -29,7 +38,7 @@ main {
     display: flex;
     align-items: flex-start;
     flex-wrap: wrap;
-    background-color: beige;
+    background-color: rgb(235, 235, 235);
     padding: 1rem;
     width: 100vw;
     gap: 2rem;
@@ -38,23 +47,34 @@ main {
 
 .project {
     position: relative;
-    width: 25rem;
-    background-color: teal;
+    width: 30rem;
+    background-color: #999;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 2rem;
     gap: 2rem;
+    border-radius: var(--br); 
+}
+
+.project > h1 {
+    font-size: 1.5rem;
+    font-weight: 500;
 }
 
 .to-do {
     position: relative;
-    width: 20rem;
+    width: 25rem;
     /* height: 10rem; */
-    background-color: yellow;
+    background-color: rgb(252, 252, 130);
     display: flex;
     flex-direction: column;
     padding: 0.5rem;
+    border-radius: calc(var(--br)/2);
+}
+
+.to-do > p {
+    max-width: 20rem;
 }
 
 #add-project {
