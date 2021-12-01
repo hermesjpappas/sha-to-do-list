@@ -15,7 +15,6 @@ function buttonListeners() {
     });
 
     cancelButton.addEventListener("click", (e) => {
-        e.preventDefault();
         popUp.style.display = "none";
     });
 
@@ -25,7 +24,6 @@ function buttonListeners() {
         let newProj = new project(projTitle.value);
         projTitle.value = "";
         projectArray.push(newProj);
-        console.log(projectArray);
         popUp.style.display = "none";
         console.log(projectArray);
         render(projectArray);
