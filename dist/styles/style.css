@@ -132,6 +132,7 @@ main {
     width: 8rem;
     margin: 0 0.5rem;
     font-family: inherit;
+    cursor: pointer;
 }
 
 #pop-up input[type="text"] {
