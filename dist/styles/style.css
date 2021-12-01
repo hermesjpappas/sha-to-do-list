@@ -1,0 +1,52 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --header-height: 5rem;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: var(--header-height);
+}
+
+main {
+    display: flex;
+}
+
+#dashboard {
+    display: flex;
+    justify-content: center;
+    background-color: beige;
+    padding: 1rem;
+    width: 100vw;
+    height: calc(100vh - var(--header-height));
+}
+
+.project {
+    width: 25rem;
+    height: 50rem;
+    background-color: teal;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+.to-do {
+    width: 20rem;
+    height: 10rem;
+    background-color: yellow;
+}
+

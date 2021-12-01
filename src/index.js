@@ -23,7 +23,6 @@ defaultProject.addToDo(test2);
 
 console.log(defaultProject.list);
 
-defaultProject.removeToDo(1);
-defaultProject.removeToDo(0);
+defaultProject.removeToDo("T0");
 
 console.log(defaultProject.list);

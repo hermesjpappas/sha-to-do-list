@@ -16,8 +16,8 @@ class project {
 
     //find the object based on its id 
     //and then splice-remove it using its index
-    removeToDo(id) {
-        let obj = this.list.find(obj => obj.id === id);
+    removeToDo(objectId) {
+        let obj = this.list.find(obj => obj.id === objectId);
         this.list.splice(this.list.indexOf(obj), 1);
     }
 }
