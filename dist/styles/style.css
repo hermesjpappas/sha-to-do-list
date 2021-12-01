@@ -137,7 +137,8 @@ main {
     top: 28%;
     width: 1.5rem;
     height: 1.5rem;
-    background-color: green;
+    background-color:#777;
+    font-weight: bold;
     color: white;
     border-radius: 50%;
     display: flex;

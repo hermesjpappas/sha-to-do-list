@@ -10,6 +10,10 @@ class toDo {
         this.done = done;
         this.id = "T" + toDo.id++;
     }
+
+    toggleDone() {
+        this.done = !this.done;
+    }
 }
 
 export { toDo };

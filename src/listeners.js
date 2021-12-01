@@ -50,6 +50,18 @@ function buttonListeners() {
             render(projectArray);
         }
     });
+
+     dash.addEventListener("click", (e) => {
+        if(e.target.classList.contains("check-to-do")) {
+            let toDoId = e.target.parentElement.id;
+            let projId = e.target.parentElement.parentElement.id;
+            let proj = projectArray.find(obj => obj.id === projId);
+            let toDo = proj.list.find(obj => obj.id === toDoId);
+            toDo.toggleDone();
+            console.log(toDo);
+            render(projectArray);
+        }
+    });
 }
 
 export { buttonListeners };

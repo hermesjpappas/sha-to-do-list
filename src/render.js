@@ -44,7 +44,16 @@ function render(projectList) {
 
             let checkButton = document.createElement("div");
             checkButton.classList.add("check-to-do");
-            checkButton.innerHTML = "&#10004;"; 
+
+            if(toDoItem.done === true) {
+                checkButton.innerHTML = "&#10004;";
+                checkButton.style.backgroundColor = "green";
+            }
+            else {
+                checkButton.innerHTML = "&times;"; 
+                checkButton.style.backgroundColor = "#777";
+            }
+            
 
             toDoDiv.appendChild(title);
             toDoDiv.appendChild(description);
