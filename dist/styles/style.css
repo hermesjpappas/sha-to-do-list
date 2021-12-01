@@ -48,11 +48,13 @@ main {
 }
 
 .to-do {
+    position: relative;
     width: 20rem;
     /* height: 10rem; */
     background-color: yellow;
     display: flex;
     flex-direction: column;
+    padding: 0.5rem;
 }
 
 #add-project {
@@ -111,5 +113,35 @@ main {
     background-color: red;
     color: white;
     font-size: 2rem;
+    cursor: pointer;
+}
+
+.rem-to-do {
+    position: absolute;
+    right: 2rem;
+    top: 28%;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.check-to-do {
+       position: absolute;
+    right: 0.3rem;
+    top: 28%;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: green;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
 }

@@ -39,6 +39,17 @@ function buttonListeners() {
             render(projectArray);
         }
     });
+
+    dash.addEventListener("click", (e) => {
+        if(e.target.classList.contains("rem-to-do")) {
+            let toDoId = e.target.parentElement.id;
+            let projId = e.target.parentElement.parentElement.id;
+            let proj = projectArray.find(obj => obj.id === projId);
+            proj.removeToDo(toDoId);
+            console.log(proj)
+            render(projectArray);
+        }
+    });
 }
 
 export { buttonListeners };

@@ -38,8 +38,18 @@ function render(projectList) {
             let description = document.createElement("p");
             description.textContent = toDoItem.description;
 
+            let remToDoButton = document.createElement("div");
+            remToDoButton.classList.add("rem-to-do");
+            remToDoButton.textContent = "-";
+
+            let checkButton = document.createElement("div");
+            checkButton.classList.add("check-to-do");
+            checkButton.innerHTML = "&#10004;"; 
+
             toDoDiv.appendChild(title);
             toDoDiv.appendChild(description);
+            toDoDiv.appendChild(remToDoButton);
+            toDoDiv.appendChild(checkButton);
 
             projDiv.appendChild(toDoDiv);
         
