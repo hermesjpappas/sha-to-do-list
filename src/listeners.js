@@ -51,7 +51,7 @@ function buttonListeners() {
         }
     });
 
-     dash.addEventListener("click", (e) => {
+    dash.addEventListener("click", (e) => {
         if(e.target.classList.contains("check-to-do")) {
             let toDoId = e.target.parentElement.id;
             let projId = e.target.parentElement.parentElement.id;
