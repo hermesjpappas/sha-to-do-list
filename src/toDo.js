@@ -8,7 +8,7 @@ class toDo {
         this.dueDate = dueDate;
         this.priority = priority;
         this.done = done;
-        this.id = toDo.id++;
+        this.id = "T" + toDo.id++;
     }
 }
 

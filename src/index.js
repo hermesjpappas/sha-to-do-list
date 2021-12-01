@@ -1,6 +1,11 @@
 import { toDo } from './toDo';
 import { project } from './project';
 
+
+//until we make it work with localStorage
+let projectArray = [];
+
+
 let test = new toDo("Make this project", "blah blah", "2/12/2021", 3);
 
 console.log(test.id);
@@ -11,6 +16,7 @@ console.log(test2.id);
 
 
 let defaultProject = new project("Default", "#fff");
+projectArray.push(defaultProject);
 
 defaultProject.addToDo(test);
 defaultProject.addToDo(test2);
