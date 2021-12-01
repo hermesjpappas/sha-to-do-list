@@ -16,6 +16,10 @@ function render(projectList) {
         projDiv.classList.add("project");
         projDiv.id = proj.id;
 
+        let projTitle = document.createElement("h1");
+        projTitle.textContent = proj.title;
+        projDiv.appendChild(projTitle);
+
         for(let j=0; j<proj.list.length; j++) {
             
             let toDoItem = proj.list[j];

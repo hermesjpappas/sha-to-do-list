@@ -2,9 +2,8 @@ class project {
 
     static id = 0;
 
-    constructor(title, color) {
+    constructor(title) {
         this.title = title;
-        this.color = color;
         this.list = [];
         this.id = "P" + project.id++;
     }
