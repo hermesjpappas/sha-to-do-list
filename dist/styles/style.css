@@ -37,6 +37,7 @@ main {
 }
 
 .project {
+    position: relative;
     width: 25rem;
     background-color: teal;
     display: flex;
@@ -96,6 +97,19 @@ main {
     gap: 2rem;
 }
 
-#form-add-proj {
-
+.remove-proj {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 0.4rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: red;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
 }

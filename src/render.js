@@ -19,6 +19,11 @@ function render(projectList) {
         projTitle.textContent = proj.title;
         projDiv.appendChild(projTitle);
 
+        let removeButton = document.createElement("div");
+        removeButton.classList.add("remove-proj");
+        removeButton.textContent = "-";
+        projDiv.appendChild(removeButton);
+
         for(let j=0; j<proj.list.length; j++) {
             
             let toDoItem = proj.list[j];

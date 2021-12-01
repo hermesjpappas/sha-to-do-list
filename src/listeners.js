@@ -7,6 +7,7 @@ const cancelButton = document.getElementById("form-cancel");
 const formAddButton = document.getElementById("form-add-proj");
 const projTitle = document.getElementById("projTitle");
 const popUp = document.getElementById("pop-up");
+const dash = document.getElementById("dashboard");
 
 
 function buttonListeners() {
@@ -27,6 +28,16 @@ function buttonListeners() {
         popUp.style.display = "none";
         console.log(projectArray);
         render(projectArray);
+    });
+
+    dash.addEventListener("click", (e) => {
+        if(e.target.classList.contains("remove-proj")) {
+            let id = e.target.parentElement.id;
+            let proj = projectArray.find(obj => obj.id === id);
+            projectArray.splice(projectArray.indexOf(proj), 1);
+            console.log(projectArray);
+            render(projectArray);
+        }
     });
 }
 
