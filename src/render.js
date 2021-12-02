@@ -31,6 +31,13 @@ function render(projectList) {
       let title = document.createElement("h1");
       title.textContent = toDoItem.title;
 
+      let dueDate = document.createElement("h2");
+      dueDate.textContent = "Due: " + toDoItem.dueDate;
+      dueDate.style.fontStyle = "italic";
+
+      let priority = document.createElement("h2");
+      priority.textContent = "Priority: " + toDoItem.priority;
+
       let description = document.createElement("p");
       description.textContent = toDoItem.description;
 
@@ -53,6 +60,8 @@ function render(projectList) {
       }
 
       toDoDiv.appendChild(title);
+      toDoDiv.appendChild(dueDate);
+      toDoDiv.appendChild(priority);
       toDoDiv.appendChild(description);
       toDoDiv.appendChild(remToDoButton);
       toDoDiv.appendChild(checkButton);

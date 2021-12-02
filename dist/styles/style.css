@@ -78,6 +78,15 @@ main {
     max-width: 20rem;
 }
 
+.to-do h1 {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.to-do h2 {
+    margin-bottom: 0.5rem;
+}
+
 #add-project {
     position: absolute;
     right: 2rem;

@@ -8,8 +8,8 @@ import { buttonListeners } from './listeners';
 let projectArray = [];
 
 
-let test = new toDo("Make this project", "Try not to have bugs you stupid idiot", "2/12/2021", 3);
-let test2 = new toDo("Make more shit", "Render everything", "3/01/2022", 1);
+let test = new toDo("Make this project", "Try not to have bugs you stupid idiot", "2/12/2021", "high");
+let test2 = new toDo("Make more shit", "Render everything", "3/01/2022", "low");
 
 let defaultProject = new project("Default", "#fff");
 
@@ -18,9 +18,9 @@ defaultProject.addToDo(test2);
 
 projectArray.push(defaultProject);
 
-let test3 = new toDo("Make other project", "Try not to blah", "5/12/2021", 3);
-let test4 = new toDo("Make other other project", "Something here", "5/12/2021", 3);
-let test5 = new toDo("something", "something more", "12/12/2021", 2);
+let test3 = new toDo("Make other project", "Try not to blah", "5/12/2021", "high");
+let test4 = new toDo("Make other other project", "Something here", "5/12/2021", "high");
+let test5 = new toDo("something", "something more", "12/12/2021", "medium");
 
 let importantProject = new project("Important", "#ff0000");
 
