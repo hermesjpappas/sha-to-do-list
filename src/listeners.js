@@ -81,7 +81,23 @@ function buttonListeners() {
     dash.addEventListener("click", (e) => {
         if(e.target.classList.contains("td-add")) {
             let projId = e.target.parentElement.parentElement.parentElement.id;
-            console.log(projId);
+            let title = document.getElementById("toDoTitle-" + projId).value;
+            let details = document.getElementById("toDoDetails-" + projId).value;
+            let dueDate = document.getElementById("toDoDate-" + projId).value;
+            let priority = document.querySelectorAll('input[name="priority"]');
+            let selectedPriority;
+            for(let radio of priority) {
+                if (radio.checked) {
+                    selectedPriority = radio.value;
+                    break;
+                }
+            }
+
+            if(!title || !details || !dueDate || !selectedPriority) return;
+            console.log(title);
+            console.log(details);
+            console.log(dueDate);
+            console.log(selectedPriority);
         }
     });
 

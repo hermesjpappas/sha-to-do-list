@@ -82,7 +82,7 @@ function render(projectList) {
             <input class="r" type="text" id="toDoTitle-${proj.id}">
         </div>
         <div>
-            <label class="l" for="toDoDetails-${proj.id}">Title: </label>
+            <label class="l" for="toDoDetails-${proj.id}">Details: </label>
             <input class="r details" type="text"  id="toDoDetails-${proj.id}">
         </div>
         <div>
