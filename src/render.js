@@ -51,6 +51,8 @@ function render(projectList) {
       if (toDoItem.done === true) {
         checkButton.innerHTML = "&#10004;";
         checkButton.style.backgroundColor = "green";
+        dueDate.style.textDecoration = "line-through";
+        priority.style.textDecoration = "line-through";
         title.style.textDecoration = "line-through";
         description.style.textDecoration = "line-through";
         toDoDiv.style.backgroundColor = "rgba(var(--to-do-color), 0.6)";
