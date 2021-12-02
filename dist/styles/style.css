@@ -245,6 +245,10 @@ main {
     border-spacing: 0 1rem;
 }
 
+.project form textarea {
+    font-family: inherit;
+}
+
 .project input {
     font-family: inherit;
 }
