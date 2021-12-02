@@ -219,10 +219,20 @@ main {
     font-weight: 500;
 }
 
+.form-container button {
+    width: 6rem;
+    height: 2rem;
+    border-radius: calc(var(--br)/4);
+    border: none;
+    background-color: #f3f3f3;
+    font-family: inherit;
+}
+
 .project form {
     display: table;
     width: 90%;
-    padding: 1rem;
+    border-collapse: separate;
+    border-spacing: 0 1rem;
 }
 
 .project input {
@@ -237,7 +247,6 @@ main {
     display: table-cell;
     text-align: right;
     padding-right: 1rem;
-    padding-bottom: 1rem;
 }
 
 .r {
@@ -246,4 +255,8 @@ main {
     border-radius: calc(var(--br)/4);
     border: none;
     height: 2rem;
+}
+
+.details {
+    height: 4rem;
 }

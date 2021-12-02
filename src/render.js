@@ -72,7 +72,7 @@ function render(projectList) {
         </div>
         <div>
             <label class="l" for="toDoDetails">Title: </label>
-            <input class="r" ype="text" class="details" id="toDoDetails">
+            <input class="r details" type="text"  id="toDoDetails">
         </div>
         <div>
             <label class="l" for="toDoDate">Date: </label>
