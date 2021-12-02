@@ -1,6 +1,7 @@
 import { projectArray } from './index';
 import { project } from './project';
 import { render } from './render';
+import { toDo } from './toDo';
 
 const addButton = document.getElementById("add-project");
 const cancelButton = document.getElementById("form-cancel");
@@ -94,6 +95,13 @@ function buttonListeners() {
             }
 
             if(!title || !details || !dueDate || !selectedPriority) return;
+
+            let newToDo = new toDo(title, details, dueDate, selectedPriority);
+
+            let proj = projectArray.find(obj => obj.id === projId);
+            proj.list.push(newToDo);
+            render(projectArray);
+
             console.log(title);
             console.log(details);
             console.log(dueDate);
