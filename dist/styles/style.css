@@ -247,6 +247,14 @@ main {
 
 .project form textarea {
     font-family: inherit;
+    outline: none;
+    resize: none;
+    width: 80%;
+}
+
+.project input[type="text"],
+.project input[type="date"] {
+    width: 80%;
 }
 
 .project input {

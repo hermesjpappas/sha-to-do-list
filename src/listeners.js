@@ -84,7 +84,7 @@ function buttonListeners() {
             let title = document.getElementById("toDoTitle-" + projId).value;
             let details = document.getElementById("toDoDetails-" + projId).value;
             let dueDate = document.getElementById("toDoDate-" + projId).value;
-            let priority = document.querySelectorAll('input[name="priority"]');
+            let priority = document.querySelectorAll('input[name="priority-' + projId +'"]');
             let selectedPriority;
             for(let radio of priority) {
                 if (radio.checked) {
@@ -105,9 +105,10 @@ function buttonListeners() {
     dash.addEventListener("click", (e) => {
         if(e.target.classList.contains("td-cancel")) {
             let projId = e.target.parentElement.parentElement.parentElement.id;
-            let formName = "to-do-cont-" + projId;
-            let form = document.getElementById(formName);
-            form.style.display = "none";
+            let contName = "to-do-cont-" + projId;
+            let cont = document.getElementById(contName);
+
+            cont.style.display = "none";
         }
     });
 }

@@ -92,11 +92,11 @@ function render(projectList) {
         <div>
             <label class="l">Priority: </label>
             <div class="r">
-                <input type="radio" id="low-${proj.id}" name="priority" value="low">
+                <input type="radio" id="low-${proj.id}" name="priority-${proj.id}" value="low">
                 <label for="low-${proj.id}">Low</label>
-                <input type="radio" id="medium-${proj.id}" name="priority" value="medium">
+                <input type="radio" id="medium-${proj.id}" name="priority-${proj.id}" value="medium">
                 <label for="medium-${proj.id}">Medium</label>
-                <input type="radio" id="high-${proj.id}" name="priority" value="high">
+                <input type="radio" id="high-${proj.id}" name="priority-${proj.id}" value="high">
                 <label for="high-${proj.id}">High</label>
             </div>
         </div>
