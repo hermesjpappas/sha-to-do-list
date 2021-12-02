@@ -76,6 +76,7 @@ main {
 
 .to-do > p {
     max-width: 20rem;
+    line-height: 1.2rem;
 }
 
 .to-do h1 {
