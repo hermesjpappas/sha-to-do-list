@@ -83,7 +83,7 @@ function render(projectList) {
         </div>
         <div>
             <label class="l" for="toDoDetails-${proj.id}">Details: </label>
-            <input class="r details" type="text"  id="toDoDetails-${proj.id}">
+            <textarea class="r details" type="text-area"  id="toDoDetails-${proj.id}"></textarea>
         </div>
         <div>
             <label class="l" for="toDoDate-${proj.id}">Date: </label>
