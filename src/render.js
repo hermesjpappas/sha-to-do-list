@@ -83,9 +83,9 @@ function render(projectList) {
                 <input type="text" class="details" id="toDoDetails-${proj.id}">
             </div>
             <div>
-                <label for="toDoDate">Date: </label>
+                <label for="toDoDate">Dates: </label>
                 <input type="date" id="toDoDate-${proj.id}>
-            </div><br/>
+            </div>
             <div>
                 <label for="low-${proj.id}">Priority: </label>
                 <input type="radio" id="low-${proj.id}" name="priority" value="low">
