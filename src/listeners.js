@@ -102,10 +102,6 @@ function buttonListeners() {
             proj.list.push(newToDo);
             render(projectArray);
 
-            console.log(title);
-            console.log(details);
-            console.log(dueDate);
-            console.log(selectedPriority);
         }
     });
 
@@ -115,6 +111,8 @@ function buttonListeners() {
             let projId = e.target.parentElement.parentElement.parentElement.id;
             let contName = "to-do-cont-" + projId;
             let cont = document.getElementById(contName);
+
+            //TO-DO: Make cancel clear the form
 
             cont.style.display = "none";
         }
