@@ -84,6 +84,16 @@ function buttonListeners() {
             console.log(projId);
         }
     });
+
+    //event listener for adding new to-do within project
+    dash.addEventListener("click", (e) => {
+        if(e.target.classList.contains("td-cancel")) {
+            let projId = e.target.parentElement.parentElement.parentElement.id;
+            let formName = "to-do-cont-" + projId;
+            let form = document.getElementById(formName);
+            form.style.display = "none";
+        }
+    });
 }
 
 export { buttonListeners };
