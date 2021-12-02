@@ -68,6 +68,41 @@ function render(projectList) {
         
         }
 
+        let toDoForm = document.createElement("form");
+        toDoForm.id = `to-do-form-${proj.id}`;
+        toDoForm.innerHTML = 
+        
+        `
+            <h1>Add To-Do</h1>
+            <div>
+                <label for="toDoTitle">Title: </label>
+                <input type="text" id="toDoTitle-${proj.id}">
+            </div>
+            <div>
+                <label for="toDoDetails">Title: </label>
+                <input type="text" class="details" id="toDoDetails-${proj.id}">
+            </div>
+            <div>
+                <label for="toDoDate">Date: </label>
+                <input type="date" id="toDoDate-${proj.id}>
+            </div>
+            <div>
+                <label for="low-${proj.id}">Priority: </label>
+                <input type="radio" id="low-${proj.id}" name="priority" value="low">
+                <label for="low-${proj.id}">Low</label>
+                <input type="radio" id="medium-${proj.id}" name="priority" value="medium">
+                <label for="medium-${proj.id}">Medium</label>
+                <input type="radio" id="high-${proj.id}" name="priority" value="high">
+                <label for="high-${proj.id}">High</label>
+            </div>
+            <div>
+                <button class="td-cancel" id="to-do-cancel-${proj.id}" type="button">Cancel</button>
+                <button class="td-add" id="to-do-add-${proj.id}">Add To-Do</button>
+            </div> 
+        `;
+
+        projDiv.appendChild(toDoForm);
+
         let projAddToDoButton = document.createElement("div");
         projAddToDoButton.classList.add("proj-to-do");
         projAddToDoButton.textContent = "+";

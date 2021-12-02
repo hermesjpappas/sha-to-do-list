@@ -62,6 +62,12 @@ function buttonListeners() {
             render(projectArray);
         }
     });
+
+    dash.addEventListener("click", (e) => {
+        if(e.target.classList.contains("proj-to-do")) {
+          //make form appear 
+        }
+    });
 }
 
 export { buttonListeners };
