@@ -68,6 +68,12 @@ function render(projectList) {
         
         }
 
+        let projAddToDoButton = document.createElement("div");
+        projAddToDoButton.classList.add("proj-to-do");
+        projAddToDoButton.textContent = "+";
+
+        projDiv.appendChild(projAddToDoButton);
+
         dash.appendChild(projDiv);
     }
 }
