@@ -30,7 +30,6 @@ function buttonListeners() {
         projTitle.value = "";
         projectArray.push(newProj);
         popUp.style.display = "none";
-        console.log(projectArray);
         render(projectArray);
     });
 
@@ -40,7 +39,6 @@ function buttonListeners() {
             let id = e.target.parentElement.id;
             let proj = projectArray.find(obj => obj.id === id);
             projectArray.splice(projectArray.indexOf(proj), 1);
-            console.log(projectArray);
             render(projectArray);
         }
     });
@@ -52,7 +50,6 @@ function buttonListeners() {
             let projId = e.target.parentElement.parentElement.id;
             let proj = projectArray.find(obj => obj.id === projId);
             proj.removeToDo(toDoId);
-            console.log(proj)
             render(projectArray);
         }
     });
@@ -65,7 +62,6 @@ function buttonListeners() {
             let proj = projectArray.find(obj => obj.id === projId);
             let toDo = proj.list.find(obj => obj.id === toDoId);
             toDo.toggleDone();
-            console.log(toDo);
             render(projectArray);
         }
     });
