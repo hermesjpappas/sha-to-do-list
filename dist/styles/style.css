@@ -219,7 +219,8 @@ main {
 
 .form-container {
     width: 100%;
-    display: flex;
+    /* display: flex; */
+    display: none;
     flex-direction: column;
     align-items: center;
 }
