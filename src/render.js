@@ -65,35 +65,35 @@ function render(projectList) {
     toDoCont.classList.add("form-container");
     toDoCont.innerHTML = `
     <h1>Add To-Do</h1>
-    <form id="test-form">
+    <form id="test-form-${proj.id}">
         <div>
-            <label class="l" for="toDoTitle">Title: </label>
-            <input class="r" type="text" id="toDoTitle">
+            <label class="l" for="toDoTitle-${proj.id}">Title: </label>
+            <input class="r" type="text" id="toDoTitle-${proj.id}">
         </div>
         <div>
-            <label class="l" for="toDoDetails">Title: </label>
-            <input class="r details" type="text"  id="toDoDetails">
+            <label class="l" for="toDoDetails-${proj.id}">Title: </label>
+            <input class="r details" type="text"  id="toDoDetails-${proj.id}">
         </div>
         <div>
-            <label class="l" for="toDoDate">Date: </label>
-            <input class="r" type="date">
+            <label class="l" for="toDoDate-${proj.id}">Date: </label>
+            <input class="r" type="date" id="toDoDate-${proj.id}">
         </div>
         <div>
             <label class="l">Priority: </label>
             <div class="r">
-                <input type="radio" id="low" name="priority" value="low">
-                <label for="low">Low</label>
-                <input type="radio" id="medium" name="priority" value="medium">
-                <label for="medium">Medium</label>
-                <input type="radio" id="high" name="priority" value="high">
-                <label for="high">High</label>
+                <input type="radio" id="low-${proj.id}" name="priority" value="low">
+                <label for="low-${proj.id}">Low</label>
+                <input type="radio" id="medium-${proj.id}" name="priority" value="medium">
+                <label for="medium-${proj.id}">Medium</label>
+                <input type="radio" id="high-${proj.id}" name="priority" value="high">
+                <label for="high-${proj.id}">High</label>
             </div>
         </div>
 
     </form>
     <div class="to-do-button-cont">
-        <button class="td-cancel" id="to-do-cancel" type="button">Cancel</button>
-        <button class="td-add" id="to-do-add">Add To-Do</button>
+        <button class="td-cancel" id="to-do-cancel-${proj.id}" type="button">Cancel</button>
+        <button class="td-add" id="to-do-add-${proj.id}">Add To-Do</button>
     </div>
         `;
 
