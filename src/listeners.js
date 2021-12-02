@@ -20,6 +20,8 @@ function buttonListeners() {
 
     //cancel adding a new project
     cancelButton.addEventListener("click", (e) => {
+        let newTitle = document.getElementById("projTitle");
+        newTitle.value = "";
         popUp.style.display = "none";
     });
 
