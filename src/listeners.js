@@ -120,10 +120,13 @@ function buttonListeners() {
         }
     });
 
-    //event listener for editable titles
-    dash.addEventListener("click", (e) => {
+    //event listener for editable project titles
+    dash.addEventListener("input", (e) => {
         if(e.target.classList.contains("proj-title-h1")) {
             let projId = e.target.parentElement.id;
+            let proj = projectArray.find(obj => obj.id === projId);
+            proj.title = e.target.textContent;
+            console.log(proj);
         //    
         }
     });
