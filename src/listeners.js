@@ -126,8 +126,6 @@ function buttonListeners() {
             let projId = e.target.parentElement.id;
             let proj = projectArray.find(obj => obj.id === projId);
             proj.title = e.target.textContent;
-            console.log(proj);
-        //    
         }
     });
 
@@ -138,9 +136,19 @@ function buttonListeners() {
             let toDoId = e.target.parentElement.id;
             let proj = projectArray.find(obj => obj.id === projId);
             let toDo = proj.list.find(obj => obj.id === toDoId); 
-            toDo.title = e.target.textContent;
-            console.log(toDo);
-        //    
+            toDo.title = e.target.textContent;    
+        }
+    });
+
+    //event listener for editable to-do details / description
+    dash.addEventListener("input", (e) => {
+        if(e.target.classList.contains("to-do-details-p")) {
+            let projId = e.target.parentElement.parentElement.id;
+            let toDoId = e.target.parentElement.id;
+            let proj = projectArray.find(obj => obj.id === projId);
+            let toDo = proj.list.find(obj => obj.id === toDoId); 
+            toDo.description = e.target.textContent; 
+            console.log(toDo);   
         }
     });
 }

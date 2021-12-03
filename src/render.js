@@ -43,6 +43,8 @@ function render(projectList) {
       priority.textContent = "Priority: " + toDoItem.priority;
 
       let description = document.createElement("p");
+      description.setAttribute("contenteditable", "true");
+      description.classList.add("to-do-details-p");
       description.textContent = toDoItem.description;
 
       let remToDoButton = document.createElement("div");
