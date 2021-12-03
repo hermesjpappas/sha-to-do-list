@@ -41,10 +41,6 @@ function render(projectList) {
       dueDate.type = "date";
       dueDate.value = toDoItem.dueDate;
 
-    //   let dueDate = document.createElement("h2");
-    //   dueDate.textContent = "Due: " + toDoItem.dueDate;
-    //   dueDate.style.fontStyle = "italic";
-
       let priorityContainer = document.createElement("div");
 
       let priorityText = document.createElement("p");
