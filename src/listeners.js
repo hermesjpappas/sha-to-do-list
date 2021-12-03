@@ -160,7 +160,6 @@ function buttonListeners() {
             let proj = projectArray.find(obj => obj.id === projId);
             let toDo = proj.list.find(obj => obj.id === toDoId);
             toDo.priority = e.target.value;
-            console.log(toDo);
             render(projectArray);
         }
     });

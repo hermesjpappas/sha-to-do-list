@@ -100,7 +100,7 @@ function render(projectList) {
         description.style.textDecoration = "line-through";
         toDoDiv.style.backgroundColor = "rgba(var(--to-do-color), 0.6)";
       } else {
-        checkButton.innerHTML = "&times;";
+        checkButton.innerHTML = "&#9711;";
         checkButton.style.backgroundColor = "#777";
       }
 
