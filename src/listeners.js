@@ -150,6 +150,21 @@ function buttonListeners() {
             toDo.description = e.target.textContent;  
         }
     });
+
+
+    //event listener for editing priority
+    dash.addEventListener("click", (e) => {
+        if(e.target.classList.contains("prioritySelect")) {
+            let toDoId = e.target.parentElement.parentElement.id;
+            let projId = e.target.parentElement.parentElement.parentElement.id;
+            let proj = projectArray.find(obj => obj.id === projId);
+            let toDo = proj.list.find(obj => obj.id === toDoId);
+            toDo.priority = e.target.value;
+            console.log(toDo);
+            render(projectArray);
+        }
+    });
+
 }
 
 export { buttonListeners };

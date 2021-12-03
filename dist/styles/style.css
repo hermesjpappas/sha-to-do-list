@@ -93,6 +93,16 @@ main {
     margin-bottom: 0.5rem;
 }
 
+.prioritySelect {
+    width: 5rem;
+    margin-bottom: 1rem;
+    background-color: rbg(var(--to-do-color));
+}
+
+.prioritySelect option {
+    background-color: rbg(var(--to-do-color));
+}
+
 #add-project {
     position: absolute;
     right: 2rem;

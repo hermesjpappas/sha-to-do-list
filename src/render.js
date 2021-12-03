@@ -39,8 +39,44 @@ function render(projectList) {
       dueDate.textContent = "Due: " + toDoItem.dueDate;
       dueDate.style.fontStyle = "italic";
 
-      let priority = document.createElement("h2");
-      priority.textContent = "Priority: " + toDoItem.priority;
+      let priorityContainer = document.createElement("div");
+
+      let priorityText = document.createElement("p");
+      priorityText.textContent = "Priority: ";
+      priorityText.style.display = "inline";
+
+      let prioritySelect = document.createElement("select");
+      prioritySelect.id = "prioritySelect-" + toDoItem.id;
+      prioritySelect.classList.add("prioritySelect");
+
+      let low = document.createElement("option");
+      low.textContent = "low";
+      low.value = "low";
+      if(toDoItem.priority === "low") {
+          low.setAttribute("selected", "selected");
+      }
+
+      let medium = document.createElement("option");
+      medium.textContent = "medium";
+      medium.value = "medium";
+      if(toDoItem.priority === "medium") {
+          medium.setAttribute("selected", "selected");
+      }
+
+      let high = document.createElement("option");
+      high.textContent = "high";
+      high.value = "high";
+      if(toDoItem.priority === "high") {
+          high.setAttribute("selected", "selected");
+      }
+
+      prioritySelect.appendChild(low);
+      prioritySelect.appendChild(medium);
+      prioritySelect.appendChild(high);
+
+      priorityContainer.appendChild(priorityText);
+      priorityContainer.appendChild(prioritySelect);
+
 
       let description = document.createElement("p");
       description.setAttribute("contenteditable", "true");
@@ -58,7 +94,7 @@ function render(projectList) {
         checkButton.innerHTML = "&#10004;";
         checkButton.style.backgroundColor = "green";
         dueDate.style.textDecoration = "line-through";
-        priority.style.textDecoration = "line-through";
+        priorityText.style.textDecoration = "line-through";
         title.style.textDecoration = "line-through";
         description.style.textDecoration = "line-through";
         toDoDiv.style.backgroundColor = "rgba(var(--to-do-color), 0.6)";
@@ -69,7 +105,7 @@ function render(projectList) {
 
       toDoDiv.appendChild(title);
       toDoDiv.appendChild(dueDate);
-      toDoDiv.appendChild(priority);
+      toDoDiv.appendChild(priorityContainer);
       toDoDiv.appendChild(description);
       toDoDiv.appendChild(remToDoButton);
       toDoDiv.appendChild(checkButton);
