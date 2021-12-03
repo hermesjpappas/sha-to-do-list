@@ -85,7 +85,7 @@ function buttonListeners() {
         if(e.target.classList.contains("td-add")) {
             let projId = e.target.parentElement.parentElement.parentElement.id;
             let title = document.getElementById("toDoTitle-" + projId).value;
-            let details = document.getElementById("toDoDetails-" + projId).value;
+            let details = document.getElementById("toDoDetails-" + projId);
             let dueDate = document.getElementById("toDoDate-" + projId).value;
             let priority = document.querySelectorAll('input[name="priority-' + projId +'"]');
             let selectedPriority;
@@ -96,9 +96,13 @@ function buttonListeners() {
                 }
             }
 
-            if(!title || !details || !dueDate || !selectedPriority) return;
+            if(!title || !dueDate || !selectedPriority) return;
 
-            let newToDo = new toDo(title, details, dueDate, selectedPriority);
+            if(!details.value) {
+                details.value ="[type details here]";
+            }
+
+            let newToDo = new toDo(title, details.value, dueDate, selectedPriority);
 
             let proj = projectArray.find(obj => obj.id === projId);
             proj.list.push(newToDo);
@@ -119,6 +123,64 @@ function buttonListeners() {
             cont.style.display = "none";
         }
     });
+
+    //event listener for editable project titles
+    dash.addEventListener("input", (e) => {
+        if(e.target.classList.contains("proj-title-h1")) {
+            let projId = e.target.parentElement.id;
+            let proj = projectArray.find(obj => obj.id === projId);
+            proj.title = e.target.textContent;
+        }
+    });
+
+    //event listener for editable to-do titles
+    dash.addEventListener("input", (e) => {
+        if(e.target.classList.contains("to-do-title-h1")) {
+            let projId = e.target.parentElement.parentElement.id;
+            let toDoId = e.target.parentElement.id;
+            let proj = projectArray.find(obj => obj.id === projId);
+            let toDo = proj.list.find(obj => obj.id === toDoId); 
+            toDo.title = e.target.textContent;    
+        }
+    });
+
+    //event listener for editable to-do details / description
+    dash.addEventListener("input", (e) => {
+        if(e.target.classList.contains("to-do-details-p")) {
+            e.target.style.color = "black";
+            let projId = e.target.parentElement.parentElement.id;
+            let toDoId = e.target.parentElement.id;
+            let proj = projectArray.find(obj => obj.id === projId);
+            let toDo = proj.list.find(obj => obj.id === toDoId); 
+            toDo.description = e.target.textContent;  
+        }
+    });
+
+
+    //event listener for editing priority
+    dash.addEventListener("change", (e) => {
+        if(e.target.classList.contains("prioritySelect")) {
+            let toDoId = e.target.parentElement.parentElement.id;
+            let projId = e.target.parentElement.parentElement.parentElement.id;
+            let proj = projectArray.find(obj => obj.id === projId);
+            let toDo = proj.list.find(obj => obj.id === toDoId);
+            toDo.priority = e.target.value;
+            render(projectArray);
+        }
+    });
+
+     //event listener for editing date
+    dash.addEventListener("change", (e) => {
+        if(e.target.classList.contains("to-do-date")) {
+            let toDoId = e.target.parentElement.id;
+            let projId = e.target.parentElement.parentElement.id;
+            let proj = projectArray.find(obj => obj.id === projId);
+            let toDo = proj.list.find(obj => obj.id === toDoId);
+            toDo.dueDate = e.target.value;
+            render(projectArray);
+        }
+    });
+
 }
 
 export { buttonListeners };

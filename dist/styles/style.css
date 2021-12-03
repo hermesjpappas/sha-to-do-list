@@ -38,6 +38,7 @@ main {
 #dashboard {
     display: flex;
     align-items: flex-start;
+    justify-content: center;
     flex-wrap: wrap;
     background-color: 235, 235, 235;
     padding: 1rem;
@@ -85,10 +86,29 @@ main {
 .to-do h1 {
     font-weight: 500;
     margin-bottom: 0.5rem;
+    max-width: calc(100% - 3rem);
 }
 
 .to-do h2 {
     margin-bottom: 0.5rem;
+}
+
+.to-do > input[type="date"] {
+    background-color: rbg(var(--to-do-color));
+    width: 9rem;
+    margin-bottom: 0.3rem;
+    border: 1px solid black;
+}
+
+.prioritySelect {
+    width: 5.3rem;
+    margin-bottom: 1rem;
+    background-color: rbg(var(--to-do-color));
+    border: 1px solid black;
+}
+
+.prioritySelect option {
+    background-color: rbg(var(--to-do-color));
 }
 
 #add-project {
@@ -197,6 +217,7 @@ main {
     top: 0.5rem;
     width: 1.5rem;
     height: 1.5rem;
+    padding-bottom: 0.2rem;
     background-color:#777;
     font-weight: bold;
     color: white;
@@ -256,8 +277,8 @@ main {
     width: 80%;
 }
 
-.project input[type="text"],
-.project input[type="date"] {
+.form-container input[type="text"],
+.form-container input[type="date"] {
     width: 80%;
 }
 

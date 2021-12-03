@@ -13,6 +13,8 @@ function render(projectList) {
     projDiv.id = proj.id;
 
     let projTitle = document.createElement("h1");
+    projTitle.setAttribute("contenteditable", "true");
+    projTitle.classList.add("proj-title-h1");
     projTitle.textContent = proj.title;
     projDiv.appendChild(projTitle);
 
@@ -29,17 +31,62 @@ function render(projectList) {
       toDoDiv.classList.add("to-do");
 
       let title = document.createElement("h1");
+      title.setAttribute("contenteditable", "true");
+      title.classList.add("to-do-title-h1");
       title.textContent = toDoItem.title;
 
-      let dueDate = document.createElement("h2");
-      dueDate.textContent = "Due: " + toDoItem.dueDate;
-      dueDate.style.fontStyle = "italic";
+      let dueDate = document.createElement("input");
+      dueDate.classList.add("to-do-date");
+      dueDate.id = "to-do-date-" + toDoItem.id;
+      dueDate.type = "date";
+      dueDate.value = toDoItem.dueDate;
 
-      let priority = document.createElement("h2");
-      priority.textContent = "Priority: " + toDoItem.priority;
+      let priorityContainer = document.createElement("div");
+
+      let priorityText = document.createElement("p");
+      priorityText.textContent = "Priority: ";
+      priorityText.style.display = "inline";
+
+      let prioritySelect = document.createElement("select");
+      prioritySelect.id = "prioritySelect-" + toDoItem.id;
+      prioritySelect.classList.add("prioritySelect");
+
+      let low = document.createElement("option");
+      low.textContent = "low";
+      low.value = "low";
+      if(toDoItem.priority === "low") {
+          low.setAttribute("selected", "selected");
+      }
+
+      let medium = document.createElement("option");
+      medium.textContent = "medium";
+      medium.value = "medium";
+      if(toDoItem.priority === "medium") {
+          medium.setAttribute("selected", "selected");
+      }
+
+      let high = document.createElement("option");
+      high.textContent = "high";
+      high.value = "high";
+      if(toDoItem.priority === "high") {
+          high.setAttribute("selected", "selected");
+      }
+
+      prioritySelect.appendChild(low);
+      prioritySelect.appendChild(medium);
+      prioritySelect.appendChild(high);
+
+      priorityContainer.appendChild(priorityText);
+      priorityContainer.appendChild(prioritySelect);
+
 
       let description = document.createElement("p");
+      description.setAttribute("contenteditable", "true");
+      description.classList.add("to-do-details-p");
       description.textContent = toDoItem.description;
+      if(description.textContent === "[type details here]") {
+          description.style.color = "#777";
+      }
 
       let remToDoButton = document.createElement("div");
       remToDoButton.classList.add("rem-to-do");
@@ -50,20 +97,26 @@ function render(projectList) {
 
       if (toDoItem.done === true) {
         checkButton.innerHTML = "&#10004;";
+        checkButton.style.paddingBottom = "0";
         checkButton.style.backgroundColor = "green";
-        dueDate.style.textDecoration = "line-through";
-        priority.style.textDecoration = "line-through";
+        dueDate.setAttribute("disabled", "disabled");
+        priorityText.style.textDecoration = "line-through";
+        prioritySelect.style.textDecoration = "line-through";
+        prioritySelect.setAttribute("disabled", "disabled");
         title.style.textDecoration = "line-through";
+        title.setAttribute("contenteditable", "false");
         description.style.textDecoration = "line-through";
+        description.setAttribute("contenteditable", "false");
+        toDoDiv.style.color = "rgba(0,0,0,0.5)";
         toDoDiv.style.backgroundColor = "rgba(var(--to-do-color), 0.6)";
       } else {
-        checkButton.innerHTML = "&times;";
+        checkButton.innerHTML = "&#9711;";
         checkButton.style.backgroundColor = "#777";
       }
 
       toDoDiv.appendChild(title);
       toDoDiv.appendChild(dueDate);
-      toDoDiv.appendChild(priority);
+      toDoDiv.appendChild(priorityContainer);
       toDoDiv.appendChild(description);
       toDoDiv.appendChild(remToDoButton);
       toDoDiv.appendChild(checkButton);
