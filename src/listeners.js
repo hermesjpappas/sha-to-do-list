@@ -119,6 +119,14 @@ function buttonListeners() {
             cont.style.display = "none";
         }
     });
+
+    //event listener for editable titles
+    dash.addEventListener("click", (e) => {
+        if(e.target.classList.contains("proj-title-h1")) {
+            let projId = e.target.parentElement.id;
+        //    
+        }
+    });
 }
 
 export { buttonListeners };

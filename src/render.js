@@ -13,6 +13,8 @@ function render(projectList) {
     projDiv.id = proj.id;
 
     let projTitle = document.createElement("h1");
+    projTitle.setAttribute("contenteditable", "true");
+    projTitle.classList.add("proj-title-h1");
     projTitle.textContent = proj.title;
     projDiv.appendChild(projTitle);
 
