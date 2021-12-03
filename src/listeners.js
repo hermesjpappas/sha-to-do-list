@@ -130,6 +130,19 @@ function buttonListeners() {
         //    
         }
     });
+
+    //event listener for editable to-do titles
+    dash.addEventListener("input", (e) => {
+        if(e.target.classList.contains("to-do-title-h1")) {
+            let projId = e.target.parentElement.parentElement.id;
+            let toDoId = e.target.parentElement.id;
+            let proj = projectArray.find(obj => obj.id === projId);
+            let toDo = proj.list.find(obj => obj.id === toDoId); 
+            toDo.title = e.target.textContent;
+            console.log(toDo);
+        //    
+        }
+    });
 }
 
 export { buttonListeners };

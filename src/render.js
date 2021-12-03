@@ -31,6 +31,8 @@ function render(projectList) {
       toDoDiv.classList.add("to-do");
 
       let title = document.createElement("h1");
+      title.setAttribute("contenteditable", "true");
+      title.classList.add("to-do-title-h1");
       title.textContent = toDoItem.title;
 
       let dueDate = document.createElement("h2");
