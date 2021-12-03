@@ -95,6 +95,7 @@ function render(projectList) {
         checkButton.style.backgroundColor = "green";
         dueDate.style.textDecoration = "line-through";
         priorityText.style.textDecoration = "line-through";
+        prioritySelect.style.textDecoration = "line-through";
         title.style.textDecoration = "line-through";
         description.style.textDecoration = "line-through";
         toDoDiv.style.backgroundColor = "rgba(var(--to-do-color), 0.6)";
