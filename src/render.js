@@ -97,8 +97,12 @@ function render(projectList) {
         dueDate.style.textDecoration = "line-through";
         priorityText.style.textDecoration = "line-through";
         prioritySelect.style.textDecoration = "line-through";
+        prioritySelect.setAttribute("disabled", "disabled");
         title.style.textDecoration = "line-through";
+        title.setAttribute("contenteditable", "false");
         description.style.textDecoration = "line-through";
+        description.setAttribute("contenteditable", "false");
+        toDoDiv.style.color = "rgba(0,0,0,0.5)";
         toDoDiv.style.backgroundColor = "rgba(var(--to-do-color), 0.6)";
       } else {
         checkButton.innerHTML = "&#9711;";
