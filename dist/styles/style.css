@@ -86,6 +86,7 @@ main {
 .to-do h1 {
     font-weight: 500;
     margin-bottom: 0.5rem;
+    max-width: calc(100% - 3rem);
 }
 
 .to-do h2 {
