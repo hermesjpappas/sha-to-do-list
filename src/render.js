@@ -35,9 +35,15 @@ function render(projectList) {
       title.classList.add("to-do-title-h1");
       title.textContent = toDoItem.title;
 
-      let dueDate = document.createElement("h2");
-      dueDate.textContent = "Due: " + toDoItem.dueDate;
-      dueDate.style.fontStyle = "italic";
+      let dueDate = document.createElement("input");
+      dueDate.classList.add("to-do-date");
+      dueDate.id = "to-do-date-" + toDoItem.id;
+      dueDate.type = "date";
+      dueDate.value = toDoItem.dueDate;
+
+    //   let dueDate = document.createElement("h2");
+    //   dueDate.textContent = "Due: " + toDoItem.dueDate;
+    //   dueDate.style.fontStyle = "italic";
 
       let priorityContainer = document.createElement("div");
 
@@ -97,7 +103,7 @@ function render(projectList) {
         checkButton.innerHTML = "&#10004;";
         checkButton.style.paddingBottom = "0";
         checkButton.style.backgroundColor = "green";
-        dueDate.style.textDecoration = "line-through";
+        dueDate.setAttribute("disabled", "disabled");
         priorityText.style.textDecoration = "line-through";
         prioritySelect.style.textDecoration = "line-through";
         prioritySelect.setAttribute("disabled", "disabled");
