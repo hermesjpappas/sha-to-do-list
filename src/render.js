@@ -82,6 +82,9 @@ function render(projectList) {
       description.setAttribute("contenteditable", "true");
       description.classList.add("to-do-details-p");
       description.textContent = toDoItem.description;
+      if(description.textContent === "[type details here]") {
+          description.style.color = "#777";
+      }
 
       let remToDoButton = document.createElement("div");
       remToDoButton.classList.add("rem-to-do");

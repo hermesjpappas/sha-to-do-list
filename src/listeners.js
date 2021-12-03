@@ -85,7 +85,7 @@ function buttonListeners() {
         if(e.target.classList.contains("td-add")) {
             let projId = e.target.parentElement.parentElement.parentElement.id;
             let title = document.getElementById("toDoTitle-" + projId).value;
-            let details = document.getElementById("toDoDetails-" + projId).value;
+            let details = document.getElementById("toDoDetails-" + projId);
             let dueDate = document.getElementById("toDoDate-" + projId).value;
             let priority = document.querySelectorAll('input[name="priority-' + projId +'"]');
             let selectedPriority;
@@ -98,7 +98,11 @@ function buttonListeners() {
 
             if(!title || !dueDate || !selectedPriority) return;
 
-            let newToDo = new toDo(title, details, dueDate, selectedPriority);
+            if(!details.value) {
+                details.value ="[type details here]";
+            }
+
+            let newToDo = new toDo(title, details.value, dueDate, selectedPriority);
 
             let proj = projectArray.find(obj => obj.id === projId);
             proj.list.push(newToDo);
@@ -143,6 +147,7 @@ function buttonListeners() {
     //event listener for editable to-do details / description
     dash.addEventListener("input", (e) => {
         if(e.target.classList.contains("to-do-details-p")) {
+            e.target.style.color = "black";
             let projId = e.target.parentElement.parentElement.id;
             let toDoId = e.target.parentElement.id;
             let proj = projectArray.find(obj => obj.id === projId);
