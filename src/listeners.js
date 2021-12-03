@@ -96,7 +96,7 @@ function buttonListeners() {
                 }
             }
 
-            if(!title || !details || !dueDate || !selectedPriority) return;
+            if(!title || !dueDate || !selectedPriority) return;
 
             let newToDo = new toDo(title, details, dueDate, selectedPriority);
 
