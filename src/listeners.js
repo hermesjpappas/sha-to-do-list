@@ -147,8 +147,7 @@ function buttonListeners() {
             let toDoId = e.target.parentElement.id;
             let proj = projectArray.find(obj => obj.id === projId);
             let toDo = proj.list.find(obj => obj.id === toDoId); 
-            toDo.description = e.target.textContent; 
-            console.log(toDo);   
+            toDo.description = e.target.textContent;  
         }
     });
 }
