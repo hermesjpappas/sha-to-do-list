@@ -8,7 +8,7 @@ import { buttonListeners } from './listeners';
 let projectArray = [];
 
 
-let test = new toDo("Make this project", "Try not to have bugs and to implement more features.", "2021-12-02", "high");
+let test = new toDo("Make this project", "Try not to have bugs and maybe implement more features.", "2021-12-02", "high", true);
 let test2 = new toDo("Happy birthday!", "Must celebrate.", "2022-09-22", "medium");
 
 let defaultProject = new project("Default");
